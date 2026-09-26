@@ -1,0 +1,63 @@
+/* ===== Design Tokens ===== */
+:root{
+  --bg: #08080a;
+  --bg-elevated: #101010;
+  --surface: #141416;
+  --surface-2: #1a1a1d;
+  --line: rgba(255,255,255,0.08);
+  --line-strong: rgba(255,255,255,0.14);
+  --text: #f5f3ef;
+  --text-2: #a8a6a1;
+  --text-3: #6e6e6b;
+  --accent: #e8ddd0; /* warm stone off-white accent */
+  --accent-2: #c9b896; /* subtle warm */
+  --max-w: 1280px;
+  --nav-h: 72px;
+  --ease: cubic-bezier(.16,1,.3,1);
+  --ease-out: cubic-bezier(.25,.46,.45,.94);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth; scrollbar-gutter: stable}
+html,body{width:100%; overflow-x:hidden}
+body{
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height:1.5;
+}
+a{color:inherit; text-decoration:none}
+button{font:inherit}
+img{display:block; max-width:100%}
+ul{list-style:none}
+
+/* Selection */
+::selection{background: #e8ddd0; color:#0a0a0a}
+
+/* Focus */
+:focus-visible{outline: 1px solid var(--accent); outline-offset: 3px; border-radius:2px}
+:focus:not(:focus-visible){outline:none}
+
+/* Scrollbar subtle */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background: var(--bg)}
+::-webkit-scrollbar-thumb{background: #2a2a2e; border-radius: 999px}
+
+/* Container */
+.container{
+  width:min(calc(100% - 32px), var(--max-w));
+  margin-inline:auto;
+}
+@media(min-width:768px){ .container{width:min(calc(100% - 48px), var(--max-w))} }
+@media(min-width:1280px){ .container{width:min(calc(100% - 64px), var(--max-w))} }
+
+/* Skip link */
+.skip{position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden}
+.skip:focus{left:16px; top:16px; width:auto; height:auto; padding:10px 14px; background:var(--text); color:var(--bg); z-index:9999; border-radius: 4px}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important}
+}

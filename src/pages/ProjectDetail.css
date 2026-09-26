@@ -1,0 +1,25 @@
+.work-detail{padding: calc(var(--nav-h) + 28px) 0 96px; background: var(--bg); min-height:60vh}
+.detail-container{display:flex; flex-direction:column; gap:28px}
+.detail-nav{padding-top:8px}
+.detail-back{display:inline-flex; align-items:center; gap:6px; font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--text-3); border:1px solid var(--line); padding:6px 12px; border-radius:999px; transition: all .2s var(--ease)}
+.detail-back:hover{color:var(--text); border-color: rgba(217,119,69,0.18); background: rgba(217,119,69,0.06)}
+.detail-header{display:flex; flex-direction:column; gap:12px; max-width:720px}
+.detail-meta{display:flex; align-items:center; gap:8px; font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--text-3)}
+.detail-dot{opacity:.5}
+.detail-featured{margin-left:6px; padding:3px 7px; border-radius:999px; background: rgba(217,119,69,0.12); border:1px solid rgba(217,119,69,0.18); color:#C9A88A; font-size:9px}
+.detail-title{font-family:'Instrument Serif', serif; font-size:clamp(36px,6vw,62px); line-height:.92; letter-spacing:-0.03em; color:var(--text)}
+.detail-short{font-size:16px; line-height:1.7; color:var(--text-2); font-weight:300; max-width:58ch}
+.detail-cover-wrap{border-radius:16px; overflow:hidden; border:1px solid var(--line); background:#0e0e10}
+.detail-cover{width:100%; height:auto; display:block; object-fit:cover}
+.detail-desc{max-width:68ch; font-size:15.5px; line-height:1.8; color:var(--text-2); font-weight:300; white-space:pre-wrap}
+.detail-gallery{padding-top:12px; border-top:1px solid var(--line)}
+.gallery-grid{display:grid; grid-template-columns:1fr; gap:16px}
+.gallery-item{border-radius:12px; overflow:hidden; border:1px solid var(--line); background:#0e0e10}
+.gallery-img{width:100%; height:auto; display:block}
+.loading-state, .error-state{display:grid; place-items:center; gap:12px; padding:80px 0; color:var(--text-2); text-align:center}
+@media (min-width:768px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:520px){
+  .work-detail{padding-top: calc(var(--nav-h) + 16px)}
+}
