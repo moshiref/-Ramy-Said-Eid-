@@ -65,7 +65,11 @@ export default function Hero() {
               {/* subtle inner vignette */}
               <div className="portrait-frame">
                 <picture>
-                  <source srcSet="/img/portrait.webp" type="image/webp" />
+                  <source
+                    srcSet="/img/portrait-sm.webp 640w, /img/portrait.webp 1000w"
+                    sizes="(max-width: 860px) 92vw, 560px"
+                    type="image/webp"
+                  />
                   <img
                     src="/img/portrait.png"
                     alt="Portrait of Ramy Said Eid — Logo and Visual Identity Designer"
